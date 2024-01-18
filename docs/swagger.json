@@ -1,0 +1,46 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "contact": {}
+    },
+    "paths": {
+        "/process_batch": {
+            "post": {
+                "description": "Processes a batch of items based on the provided batch size.",
+                "produces": [
+                    "text/plain"
+                ],
+                "summary": "Process a batch of items",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "Batch size for processing",
+                        "name": "batch_size",
+                        "in": "query",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Batch successfully handled!",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
